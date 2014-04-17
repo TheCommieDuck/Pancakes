@@ -1,0 +1,36 @@
+To Fix:
+
+	Issue:
+	- Camera flips view when going underneath
+	Proposed Fix:
+	- Clamp camera to 90/-90?
+	
+	Issue:
+	- Text draws behind the screen
+
+	Issue:
+	- Xbox controller not picked up if put in after game start
+	
+	
+To Tweak:
+	
+	- FPS Camera feels awkward to use
+		- Movement feels weird
+		- Rotates/moves with rotated camera weirdly
+	
+	- Better creation of entities
+
+To Add:
+	
+	- Other camera types
+		- Tracking
+		- Arcball
+	
+	- Terrain
+		- From heightmap
+		- Generation  
+		- LOD  
+		- Making it look nice
+	
+	- Mouse handling
+	- Trigger support

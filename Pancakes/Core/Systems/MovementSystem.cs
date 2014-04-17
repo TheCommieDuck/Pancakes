@@ -55,7 +55,7 @@ namespace WaffleCat.Core.Systems
 
         private void UpdateTransformMatrix(Transform3DComponent trans)
         {
-            trans.TransformMatrix = Matrix.CreateFromYawPitchRoll(0, 0, 0) * Matrix.CreateTranslation(trans.Position);
+            trans.TransformMatrix = Matrix.CreateFromYawPitchRoll(trans.Rotation.Y, trans.Rotation.X, trans.Rotation.Z) * Matrix.CreateTranslation(trans.Position);
         }
     }
 }

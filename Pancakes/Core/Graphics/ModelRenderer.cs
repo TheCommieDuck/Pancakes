@@ -50,7 +50,7 @@ namespace WaffleCat.Core.Graphics
             Matrix proj = camera.Get<CameraComponent>().Projection;
             foreach (Entity e in this.entities)
             {
-                Matrix entityWorld = Matrix.CreateScale(0.1f) * e.Get<Transform3DComponent>().TransformMatrix;
+                Matrix entityWorld = Matrix.CreateScale(0.5f) * e.Get<Transform3DComponent>().TransformMatrix;
                 foreach (ModelMesh mesh in e.Get<ModelComponent>().Model.Meshes)
                 {
                     Matrix world = e.Get<ModelComponent>().ModelTransforms[mesh.ParentBone.Index] * entityWorld;
@@ -60,7 +60,6 @@ namespace WaffleCat.Core.Graphics
                         if (meshPart.Effect is BasicEffect)
                         {
                             BasicEffect basicEffect = (BasicEffect)effect;
-                            basicEffect.TextureEnabled = false;
                             basicEffect.View = view;
                             basicEffect.Projection = proj;
                             basicEffect.World = world;
@@ -71,6 +70,7 @@ namespace WaffleCat.Core.Graphics
                             effect.Parameters["World"].SetValue(world);
                             effect.Parameters["Projection"].SetValue(proj);
                             effect.Parameters["View"].SetValue(view);
+                            effect.Parameters["DiffuseColor"].SetValue(new Vector3(0f, 1f, 1f));
                         }
                     }
                     mesh.Draw();

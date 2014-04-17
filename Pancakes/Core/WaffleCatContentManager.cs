@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace WaffleCat.Core
 {
@@ -22,6 +23,8 @@ namespace WaffleCat.Core
         /// <returns>The loaded asset.</returns>
         public override T Load<T>(String assetName)
         {
+            //if (typeof(T) == typeof(Effect))
+           //    assetName += "";// ".mgfx";
             try
             {
                 return base.Load<T>(assetName);
@@ -33,7 +36,7 @@ namespace WaffleCat.Core
                 {
                     return GetDefault<T>();
                 }
-                catch (KeyNotFoundException key)
+                catch (KeyNotFoundException)
                 {
                     Log.WriteError("Couldn't find a default resource for " + assetName);
                     throw c;

@@ -28,14 +28,10 @@ namespace WaffleCat
 
         public override void Initialize()
         {
-
             this.RegisterSystems();
 
-            FPSCamera camera = new FPSCamera(new Vector3(0.5f, 0.5f, 0.5f), Vector3.Zero, 
+            FPSCamera camera = new FPSCamera(new Vector3(0f, 0f, 0f), Vector3.Zero, 
                 Blackboard.Get<GraphicsDevice>("GraphicsDevice").Viewport.AspectRatio, 0.05f, 100f);
-
-            Cube cube = new Cube();
-            cube.Get<Transform3DComponent>().Position = new Vector3(5f, 1f, 5f);
 
             Entity fpscounter = new Entity();
             fpscounter.AddComponent(new Transform2DComponent() { Position = new Vector2(5, 150) });
@@ -47,21 +43,17 @@ namespace WaffleCat
             pos.AddComponent(new GUITextComponent());
             pos.AddComponent(new Transform2DComponent() { Position = new Vector2(5, 180) });
 
-            Entity floor = new Entity();
-            floor.AddComponent(new Transform3DComponent(new Vector3(0, 0, 0)));
-            floor.AddComponent(new FloorComponent() { Width = 20, Height = 24 });
-            floor.AddComponent(new VertexBufferComponent());
-
             Entity model = new Entity();
-            model.AddComponent(new Transform3DComponent(new Vector3(10f, 0f, 5f)));
-            model.AddComponent(new ModelComponent() { Model = Blackboard.Get<ContentManager>("ContentManager").Load<Model>("madokadddd") });
+            model.AddComponent(new Transform3DComponent(new Vector3(0f, -1f, 2f)));
+            model.Get<Transform3DComponent>().Rotation = new Vector3(0f, MathHelper.PiOver2, 3f*MathHelper.PiOver2);
+            Model m = Blackboard.Get<ContentManager>("ContentManager").Load<Model>("dragon");
+            model.AddComponent(new ModelComponent() { Model = m });
+            Effect simple = Blackboard.Get<ContentManager>("ContentManager").Load<Effect>("SimpleEffect");
 
             this.AddEntity(model);
             this.AddEntity(pos);
             this.AddEntity(fpscounter);
             this.AddEntity(camera);
-            this.AddEntity(floor);
-            this.AddEntity(cube);
         }
     }
 }
