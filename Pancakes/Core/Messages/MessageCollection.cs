@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WaffleCat.Core.Messages
 {
-    class MessageCollection
+    public class MessageCollection
     {
         private Dictionary<Type, List<Message>> messages;
 

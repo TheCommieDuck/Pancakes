@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace WaffleCat.Core.Graphics
 {
-    interface IRenderer
+    public interface IRenderer
     {
         void Draw();
     }

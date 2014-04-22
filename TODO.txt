@@ -6,11 +6,7 @@ To Fix:
 	- Clamp camera to 90/-90?
 	
 	Issue:
-	- Text draws behind the screen
-
-	Issue:
-	- Xbox controller not picked up if put in after game start
-	
+	- Text draws behind the screen	
 	
 To Tweak:
 	
@@ -19,7 +15,7 @@ To Tweak:
 		- Rotates/moves with rotated camera weirdly
 	
 	- Better creation of entities
-
+	- tidy up the whole camera thing
 To Add:
 	
 	- Other camera types
@@ -34,3 +30,5 @@ To Add:
 	
 	- Mouse handling
 	- Trigger support
+	- Message handling	
+

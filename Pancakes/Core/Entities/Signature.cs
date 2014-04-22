@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WaffleCat.Core.Entities
 {
-    class Signature
+    public class Signature
     {
         public List<Type> ComponentTypes;
 

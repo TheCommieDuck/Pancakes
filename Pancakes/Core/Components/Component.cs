@@ -6,7 +6,7 @@ using WaffleCat.Core.Entities;
 
 namespace WaffleCat.Core.Components
 {
-    class Component
+    public abstract class Component
     {
     }
 }

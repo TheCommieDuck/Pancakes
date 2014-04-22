@@ -12,7 +12,5 @@ namespace WaffleCat.Core.Components
         public Model Model { get; set; }
 
         public Matrix[] ModelTransforms { get; set; }
-
-
     }
 }

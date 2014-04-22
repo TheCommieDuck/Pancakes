@@ -6,7 +6,7 @@ using WaffleCat.Core.Entities;
 
 namespace WaffleCat.Core.Messages
 {
-    class Message
+    public class Message
     {
         public Entity Source { get; set; }
     }

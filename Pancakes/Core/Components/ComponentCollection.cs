@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WaffleCat.Core.Components
 {
-    class ComponentCollection : Dictionary<Type, Component>
+    public class ComponentCollection : Dictionary<Type, Component>
     {
         public Component Get<T>()
         {

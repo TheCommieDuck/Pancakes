@@ -48,7 +48,6 @@ namespace WaffleCat
             model.Get<Transform3DComponent>().Rotation = new Vector3(0f, MathHelper.PiOver2, 3f*MathHelper.PiOver2);
             Model m = Blackboard.Get<ContentManager>("ContentManager").Load<Model>("dragon");
             model.AddComponent(new ModelComponent() { Model = m });
-            Effect simple = Blackboard.Get<ContentManager>("ContentManager").Load<Effect>("SimpleEffect");
 
             this.AddEntity(model);
             this.AddEntity(pos);

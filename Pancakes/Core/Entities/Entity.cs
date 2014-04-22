@@ -6,7 +6,7 @@ using WaffleCat.Core.Components;
 
 namespace WaffleCat.Core.Entities
 {
-    class Entity
+    public class Entity
     {
         private static uint CurrentID = 0;
 

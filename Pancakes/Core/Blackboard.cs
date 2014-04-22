@@ -18,7 +18,7 @@ namespace WaffleCat.Core
 
         public static object Get(String item)
         {
-            return items[item];
+            return Get<object>(item);
         }
 
         public static void Set(String name, object item)

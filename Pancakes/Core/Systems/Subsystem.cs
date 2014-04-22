@@ -8,7 +8,7 @@ using WaffleCat.Core.Messages;
 
 namespace WaffleCat.Core.Systems
 {
-    abstract class Subsystem
+    public abstract class Subsystem
     {
         //when an entity has changed, then all subsystems should be updated to see if they want the given entity
         public Signature Signature { get; protected set; }

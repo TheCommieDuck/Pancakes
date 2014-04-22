@@ -9,7 +9,7 @@ using WaffleCat.Core.Systems;
 
 namespace WaffleCat.Core
 {
-    class World
+    public class World
     {
         public List<Subsystem> Systems { get; private set; }
 
