@@ -17,7 +17,8 @@ namespace WaffleCat.Core.Systems
             Messageboard.AddListener(this, typeof(HasMovedMessage));
         }
 
-        public override void Update(GameTime gameTime)
+        //TODO: this is ugly
+        public override void ProcessMessages(GameTime gameTime)
         {
             foreach (HasMovedMessage message in Messages.GetMessages<HasMovedMessage>())
             {
@@ -31,8 +32,6 @@ namespace WaffleCat.Core.Systems
                 }
             }
             Messages.ClearMessages<HasMovedMessage>();
-
-            base.Update(gameTime);
         }
 
         public override void Process(Entity entity, GameTime gameTime)
@@ -41,13 +40,12 @@ namespace WaffleCat.Core.Systems
             //if we need to update either
             if (camera.NeedsFOVUpdate)
             {
-                camera.LookAt = CameraComponent.BaseReference;
                 CalculateFOVMatrix(camera, entity.Get<Transform3DComponent>().Position);
                 camera.NeedsViewUpdate = true;
             }
 
             if (camera.NeedsViewUpdate)
-                CalculateViewMatrix(camera, entity.Get<Transform3DComponent>().Position, entity.Get<Transform3DComponent>().Rotation);
+                CalculateViewMatrix(camera, entity.Get<Transform3DComponent>().Position, entity.Get<Transform3DComponent>().RotationMatrix);
         }
 
         private void CalculateFOVMatrix(CameraComponent camera, Vector3 position)
@@ -56,11 +54,11 @@ namespace WaffleCat.Core.Systems
             camera.NeedsFOVUpdate = false;
         }
 
-        private void CalculateViewMatrix(CameraComponent camera, Vector3 position, Vector3 rotation)
+        private void CalculateViewMatrix(CameraComponent camera, Vector3 position, Matrix rotationMatrix)
         {
-            Matrix rotationMatrix = Matrix.CreateFromYawPitchRoll(rotation.Y, rotation.X, rotation.Z);
-            Vector3 lookAt = position + Vector3.Transform(CameraComponent.BaseReference, rotationMatrix);
-            camera.LookAt = lookAt;
+            Vector3 camUp = Vector3.Transform(CameraComponent.BaseReference, rotationMatrix);
+            Vector3 lookAt =
+            camera.LookAt = position + Vector3.Transform(CameraComponent.BaseReference, rotationMatrix);
             camera.ViewMatrix = Matrix.CreateLookAt(position, camera.LookAt, Vector3.Up);
             camera.NeedsViewUpdate = false;
         }

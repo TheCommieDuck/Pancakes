@@ -31,6 +31,7 @@ namespace WaffleCat.Core.Systems
 
         public virtual void Update(GameTime gameTime)
         {
+            ProcessMessages(gameTime);
             foreach (Entity e in entities)
                 Process(e, gameTime);
         }
@@ -38,6 +39,8 @@ namespace WaffleCat.Core.Systems
         public virtual void Process(Entity entity, GameTime gameTime) {}
 
         public virtual void InitializeEntity(Entity entity) {}
+
+        public virtual void ProcessMessages(GameTime gameTime) { }
 
         public void AddEntity(Entity e)
         {

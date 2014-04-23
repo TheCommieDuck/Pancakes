@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Core\Blackboard.cs" />
     <Compile Include="Core\Components\CubeComponent.cs" />
+    <Compile Include="Core\Components\FPSCameraComponent.cs" />
     <Compile Include="Core\Components\FPSCounterComponent.cs" />
     <Compile Include="Core\Components\InputComponent.cs" />
     <Compile Include="Core\Components\ModelComponent.cs" />
@@ -79,12 +80,13 @@
     <Compile Include="Core\Messages\ToggleFullscreenMessage.cs" />
     <Compile Include="Core\Systems\CameraSystem.cs" />
     <Compile Include="Core\Systems\CubeSystem.cs" />
+    <Compile Include="Core\Systems\FPSCameraSystem.cs" />
     <Compile Include="Core\Systems\FPSCounterSystem.cs" />
     <Compile Include="Core\Systems\GraphicsSystem.cs" />
     <Compile Include="Core\Components\CameraComponent.cs" />
     <Compile Include="Core\Log.cs" />
     <Compile Include="Core\Systems\InputSystem.cs" />
-    <Compile Include="Core\Systems\MovementSystem.cs" />
+    <Compile Include="Core\Systems\TransformSystem.cs" />
     <Compile Include="Core\Systems\Subsystem.cs" />
     <Compile Include="Core\Systems\PositionalTrackingSystem.cs" />
     <Compile Include="Core\WaffleCatContentManager.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Core\World.cs" />
     <Compile Include="FloorComponent.cs" />
     <Compile Include="FloorSystem.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

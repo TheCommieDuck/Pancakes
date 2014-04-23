@@ -16,11 +16,11 @@ namespace WaffleCat
             this.RegisterSystem(new CameraSystem());
             this.RegisterSystem(new FloorSystem());
             this.RegisterSystem(new InputSystem());
-            this.RegisterSystem(new MovementSystem());
+            this.RegisterSystem(new TransformSystem());
             this.RegisterSystem(new FPSCounterSystem());
             this.RegisterSystem(new PositionalTrackingSystem());
             this.RegisterSystem(new CubeSystem());
-
+            this.RegisterSystem(new FPSCameraSystem());
             this.RegisterSystem(new TextRenderer());
             this.RegisterSystem(new VertexBufferRenderer());
             this.RegisterSystem(new ModelRenderer());

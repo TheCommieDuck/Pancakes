@@ -35,6 +35,14 @@ namespace WaffleCat.Core.Components
             }
         }
 
+        public Matrix RotationMatrix
+        {
+            get
+            {
+                return Matrix.CreateFromYawPitchRoll(rotation.Y, rotation.X, rotation.Z);
+            }
+        }
+
         public Matrix TransformMatrix { get; set; }
 
         private Vector3 position;

@@ -46,10 +46,6 @@ namespace WaffleCat.Core
 
         public void Update(GameTime gameTime)
         {
-            //Iterate the systems and call update. 
-            //TODO: Make input less hacky
-            //InputSystem.Keyboard.Update(Keyboard.GetState());
-            //StateManager.Update(gameTime);
             World.Update(gameTime);
         }
 
